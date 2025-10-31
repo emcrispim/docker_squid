@@ -1,0 +1,22 @@
+
+services:
+  squid:
+    build: .
+    container_name: squid-proxy
+    image: squid2.0
+    ports:
+      - "3128:3128"
+    volumes:
+      - ./squid.conf:/etc/squid/squid.conf:ro
+      - ./allowed-sites.txt:/etc/squid/allowed-sites.txt:ro
+      - ./logs:/var/log/squid
+    network_mode: "host"      
+    ulimits:
+      nofile:
+        soft: "65536"
+        hard: "65536"
+    entrypoint: >
+      bash -c "chown -R proxy:proxy /var/log/squid /var/spool/squid && squid -N -d 1"
+    # command: ["squid","-N","-d","1"]
+    # restart: unless-stopped
+

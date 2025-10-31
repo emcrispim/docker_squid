@@ -1,0 +1,2 @@
+.cm-faro.pt
+.google.com

@@ -1,2 +1,3 @@
-# docker_squid
-Squid proxy using docker
+Simple squid with allowed-sites using docker
+
+
