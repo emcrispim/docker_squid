@@ -32,5 +32,5 @@ docker compose up -d
 docker ps (-a for non running containers)
 ```
 
-**Restart/Reconfigure squi**
+**Restart/Reconfigure squid**
 docker composer restart squid
